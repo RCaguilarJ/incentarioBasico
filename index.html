@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./styles.css" />
+    <title>Inventario</title>
+  </head>
+  <body>
+    <header>
+      <h1></h1>
+      <img src="./assets/img/logo.jpeg" alt="logo" />
+    </header>
+
+    <main class="content">
+      <h1>Inventario de Tenis</h1>
+      <h2>Agregar un par de tenis al inventario:</h2>
+      <form id="formularioInventario">
+        <div class="info">
+          <p class="color">Modelo: <input type="text" id="colorInput" /></p>
+          <p class="talla">Color: <input type="text" id="tallaInput" /></p>
+          <p class="modelo">Talla: <input type="text" id="modeloInput" /></p>
+          <p class="cantidad">
+            Cantidad:
+            <input type="number" id="cantidadInput" min="1" value="1" />
+          </p>
+        </div>
+        <button class="agregar" type="button" onclick="agregarPar()">
+          Agregar Par
+        </button>
+      </form>
+      <button class="quitar" onclick="quitarPar()">Quitar Par</button>
+      <div id="inventario">
+        <table>
+          <thead>
+            <tr>
+              <th>Modelo</th>
+              <th>color</th>
+              <th>Talla</th>
+              <th>Cantidad</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- Aquí se mostrarán las filas de datos del inventario -->
+          </tbody>
+        </table>
+      </div>
+    </main>
+
+    <script src="./main.js"></script>
+  </body>
+</html>
