@@ -16,6 +16,8 @@ function agregarPar() {
     inventario.push({ color, talla, modelo, cantidad });
   }
 
+  localStorage.setItem("inventario", JSON.stringify(inventario));
+
   document.getElementById("colorInput").value = "";
   document.getElementById("tallaInput").value = "";
   document.getElementById("modeloInput").value = "";
@@ -25,6 +27,8 @@ function agregarPar() {
 }
 
 function quitarPar() {
+  localStorage.setItem("inventario", JSON.stringify(inventario));
+
   const color = document.getElementById("colorInput").value;
   const talla = document.getElementById("tallaInput").value;
   const modelo = document.getElementById("modeloInput").value;
@@ -40,6 +44,19 @@ function quitarPar() {
   }
 }
 
+function guardarInventario() {
+  localStorage.setItem("inventario", JSON, stringify(inventario));
+}
+
+function recuperarInventario() {
+  const inventarioGuardado = localStorage.getItem("inventario");
+  if (inventarioGuardado) {
+    inventario = JSON.parse(inventarioGuardado);
+  }
+}
+
+window.addEventListener("load", recuperarInventario);
+
 function actualizarInventario() {
   const inventarioTableBody = document.querySelector("#inventario tbody");
   inventarioTableBody.innerHTML = "";
@@ -54,4 +71,5 @@ function actualizarInventario() {
         `;
     inventarioTableBody.appendChild(fila);
   });
+  guardarInventario();
 }

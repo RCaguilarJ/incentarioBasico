@@ -23,13 +23,13 @@ header {
   min-width: 320px;
   height: 100px;
   text-align: center;
-  background: rgb(36, 30, 126);
+  /* background: rgb(36, 30, 126);
   background: linear-gradient(
     90deg,
     rgba(36, 30, 126, 1) 0%,
     rgba(157, 129, 191, 1) 35%,
     rgba(36, 30, 126, 1) 100%
-  );
+  ); */
 }
 
 header img {
@@ -76,6 +76,12 @@ table {
   margin-top: 20px;
 }
 
+.inventario {
+  width: 100%;
+  max-width: 800px;
+  height: auto;
+}
+
 th,
 td {
   border: 1px solid #ddd;
@@ -112,4 +118,16 @@ th {
 }
 .quitar:hover {
   background-color: #9d81bf;
+}
+
+@media (max-width: 768px) {
+  .inventario {
+    width: 90%;
+    font-size: 10px; /* Ajusta el tamaño de fuente según tus necesidades */
+    border-spacing: 2px; /* Ajusta el espaciado entre celdas */
+  }
+  table {
+    border-collapse: collapse;
+    margin-top: 10px;
+  }
 }
